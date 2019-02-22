@@ -1,9 +1,9 @@
 // vue.config.js
 module.exports = {
   // 基本路径
-  publicPath: '/',
+  publicPath: '../',
   // 输出文件目录
-  outputDir: 'dist',
+  outputDir: 'docs',
   // eslint-loader 是否在保存的时候检查
   lintOnSave: true,
   // use the full build with in-browser compiler?
@@ -11,7 +11,7 @@ module.exports = {
   // compiler: false,
   // 生产环境是否生成 sourceMap 文件
   productionSourceMap: true,
-  transpileDependencies:[],
+  transpileDependencies: [],
   // css相关配置
   css: {
     // 是否使用css分离插件 ExtractTextPlugin
