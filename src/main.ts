@@ -15,6 +15,8 @@ Vue.config.productionTip = false;
 
 import '@babel/polyfill';
 
+import './permission';
+
 new Vue({
   el: '#app',
   router,

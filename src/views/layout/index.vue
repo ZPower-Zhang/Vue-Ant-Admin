@@ -1,34 +1,27 @@
 <template>
-<a-layout id="components-layout-demo-custom-trigger" style="height: 100%;">
-  <a-layout-sider :trigger="null" collapsible v-model="collapsed">
-    <SiderBar></SiderBar>
-  </a-layout-sider>
-  <a-layout>
-    <a-layout-header style="background: #fff; padding: 0">
-      <a-icon class="trigger" :type="collapsed ? 'menu-unfold' : 'menu-fold'" @click="()=> collapsed = !collapsed" />
-    </a-layout-header>
-    <AppMain></AppMain>
-  </a-layout>
-</a-layout>
-<!-- <section class="app-wrapper">
-    <SiderBar></SiderBar>
-    <div class="main-container">
-      <NavBar></NavBar>
+  <a-layout id="components-layout-demo-custom-trigger" style="height: 100%;">
+    <a-layout-sider :trigger="null" collapsible v-model="collapsed">
+      <SiderBar></SiderBar>
+    </a-layout-sider>
+    <a-layout>
+      <a-layout-header style="background: #fff; padding: 0">
+        <a-icon
+          class="trigger"
+          :type="collapsed ? 'menu-unfold' : 'menu-fold'"
+          @click="()=> collapsed = !collapsed"
+        />
+      </a-layout-header>
       <AppMain></AppMain>
-    </div>
-  </section>-->
+    </a-layout>
+  </a-layout>
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  Vue,
-  Emit
-} from "vue-property-decorator";
-import AppMain from "./components/AppMain.vue";
-import NavBar from "./components/NavBar.vue";
-import SiderBar from "./components/SiderBar.vue";
-import BreadCrumb from "@/components/BreadCrumb.vue";
+import { Component, Vue, Emit } from 'vue-property-decorator';
+import AppMain from './components/AppMain.vue';
+import NavBar from './components/NavBar.vue';
+import SiderBar from './components/SiderBar.vue';
+import BreadCrumb from '@/components/BreadCrumb.vue';
 
 @Component({
   components: {
