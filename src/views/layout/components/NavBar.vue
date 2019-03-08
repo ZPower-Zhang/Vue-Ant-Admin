@@ -10,8 +10,8 @@ import BreadCrumb from '@/components/BreadCrumb.vue';
 
 @Component({
   components: {
-    BreadCrumb
-  }
+    BreadCrumb,
+  },
 })
 export default class Navbar extends Vue {}
 </script>

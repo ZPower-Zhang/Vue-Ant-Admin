@@ -1,18 +1,18 @@
 const app = {
   state: {
-    userInfo: {}
+    userInfo: {},
   },
   mutations: {
     GET_USERINFO: (state: any, payload: any) => {
-      state.userInfo = payload
-    }
+      state.userInfo = payload;
+    },
   },
   actions: {
-    getUserInfo({ commit }: {commit: any;}, userInfo: any) {
-      commit('GET_USERINFO', userInfo)
-    }
+    getUserInfo({ commit }: any, userInfo: any) {
+      commit('GET_USERINFO', userInfo);
+    },
   },
-  strict: true
-}
+  strict: true,
+};
 
-export default app
+export default app;

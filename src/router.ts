@@ -16,7 +16,7 @@ export default new Router({
     {
       path: '/',
       component: Layout,
-      redirect: '/home/index'
+      redirect: '/home/index',
     },
     {
       path: '/home',
@@ -28,16 +28,15 @@ export default new Router({
           path: 'index',
           name: 'index',
           component: () => import('@/views/home/index.vue'),
-          meta: { title: 'index', icon: 'lock', noCache: false, admin: false }
+          meta: { title: 'index', icon: 'lock', noCache: false, admin: false },
         },
         {
           path: '/dashboard',
           name: 'dashboard',
           component: () => import('@/views/home/dashboard.vue'),
-          meta: { title: 'dashboard', icon: 'lock', noCache: false, admin: false }
-        }
-      ]
-    }
-  ]
-  ,
-})
+          meta: { title: 'dashboard', icon: 'lock', noCache: false, admin: false },
+        },
+      ],
+    },
+  ],
+});

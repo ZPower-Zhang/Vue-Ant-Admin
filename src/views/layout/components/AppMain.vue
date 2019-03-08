@@ -2,23 +2,23 @@
   <section class="app-main" style="height: 100%;">
     <NavBar></NavBar>
     <transition name="fade-transform" mode="out-in">
-      <keep-alive :include="cachedViews">
+      <!-- <keep-alive :include="cachedViews"> -->
         <a-layout-content class="main-content">
           <router-view :key="key"></router-view>
         </a-layout-content>
-      </keep-alive>
+      <!-- </keep-alive> -->
     </transition>
   </section>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Emit, Watch } from "vue-property-decorator";
-import NavBar from "./NavBar.vue";
+import { Component, Vue, Emit, Watch } from 'vue-property-decorator';
+import NavBar from './NavBar.vue';
 
 @Component({
   components: {
-    NavBar
-  }
+    NavBar,
+  },
 })
 export default class Appmain extends Vue {
   get cachedViews() {
@@ -29,17 +29,17 @@ export default class Appmain extends Vue {
     return 0;
   }
 
-  mounted() {
-    this.$on("emit-todo", function(n: string) {
-      console.log(n);
+  private mounted() {
+    this.$on('emit-todo', (n: string) => {
+      // console.log(n);
     });
 
-    this.emitTodo("world");
+    this.emitTodo('world');
   }
 
   @Emit()
-  emitTodo(n: string) {
-    console.log("hello");
+  private emitTodo(n: string) {
+    // console.log('hello');
   }
 }
 </script>

@@ -1,24 +1,21 @@
 <template>
-<a-breadcrumb class="m-breadcrumb">
-  <a-breadcrumb-item href>
-    <a-icon type="home" />
-  </a-breadcrumb-item>
-  <a-breadcrumb-item href>
-    <a-icon type="user" />
-    <span>Application List</span>
-  </a-breadcrumb-item>
-  <a-breadcrumb-item>Application</a-breadcrumb-item>
-</a-breadcrumb>
+  <a-breadcrumb class="m-breadcrumb">
+    <a-breadcrumb-item href>
+      <a-icon type="home"/>
+    </a-breadcrumb-item>
+    <a-breadcrumb-item href>
+      <a-icon type="user"/>
+      <span>Application List</span>
+    </a-breadcrumb-item>
+    <a-breadcrumb-item>Application</a-breadcrumb-item>
+  </a-breadcrumb>
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  Vue
-} from "vue-property-decorator";
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
-  components: {}
+  components: {},
 })
 export default class BreadCrumb extends Vue {}
 </script>

@@ -27,16 +27,16 @@ module.exports = {
     loaderOptions: {},
     // 启用 CSS modules for all css / pre-processor files.
     modules: false,
-    // loaderOptions: {
-    //   scss: {
-    //     modifyVars: {
-    //       'primary-color': '#1DA57A',
-    //       'link-color': '#1DA57A',
-    //       'border-radius-base': '2px',
-    //     },
-    //     javascriptEnabled: true
-    //   }
-    // }
+  // loaderOptions: {
+  //   scss: {
+  //     modifyVars: {
+  //       'primary-color': '#1DA57A',
+  //       'link-color': '#1DA57A',
+  //       'border-radius-base': '2px',
+  //     },
+  //     javascriptEnabled: true
+  //   }
+  // }
   },
 
   // use thread-loader for babel & TS in production build
@@ -59,7 +59,8 @@ module.exports = {
     https: false,
     hotOnly: false,
     proxy: null, // 设置代理
-    before: app => {}
+    before: app => {
+    }
   },
 
   pluginOptions: {
@@ -67,5 +68,40 @@ module.exports = {
       preProcessor: 'scss',
       patterns: []
     }
+  },
+
+  chainWebpack: config => {
+    const svgRule = config.module.rule('svg')
+    // 清除已有的所有 loader。
+    // 如果你不这样做，接下来的 loader 会附加在该规则现有的 loader 之后。
+    svgRule.uses.clear()
+
+    // 添加要替换的 loader
+    svgRule
+      .include
+      // .add(resolve('src/components/SvgIcon')) // 处理svg目录
+      .end()
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({
+        symbolId: 'icon-[name]'
+      })
   }
+
+// chainWebpack: config => {
+//   config.module.rules.delete('svg'); // 重点:删除默认配置中处理svg,
+//   // const svgRule = config.module.rule('svg')
+//   // svgRule.uses.clear()
+//   config.module
+//     .rule('svg-sprite-loader')
+//     .test(/\.svg$/)
+//     .include
+//     .add(resolve('src/icons')) // 处理svg目录
+//     .end()
+//     .use('svg-sprite-loader')
+//     .loader('svg-sprite-loader')
+//     .options({
+//       symbolId: 'icon-[name]'
+//     })
+// }
 }

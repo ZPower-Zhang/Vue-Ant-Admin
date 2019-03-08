@@ -1,43 +1,38 @@
 <template>
-<div class="g-login">
-  <div class="login-wrap">
-    <div class="m-ipt">
-      <div class="field-label">用户名</div>
-      <input class="field-ipt" type="text" placeholder="User Name">
-      <div>
-        <hr class="mu-text-field-line">
-        <hr class="mu-text-field-focus-line">
+  <div class="g-login">
+    <div class="login-wrap">
+      <div class="m-ipt">
+        <div class="field-label">用户名</div>
+        <input class="field-ipt" type="text" placeholder="User Name">
+        <div>
+          <hr class="mu-text-field-line">
+          <hr class="mu-text-field-focus-line">
+        </div>
       </div>
-    </div>
 
-    <div class="m-ipt">
-      <div class="field-label">密码</div>
-      <input class="field-ipt" type="text" placeholder="Password">
-      <div>
-        <hr class="mu-text-field-line">
-        <hr class="mu-text-field-focus-line">
+      <div class="m-ipt">
+        <div class="field-label">密码</div>
+        <input class="field-ipt" type="text" placeholder="Password">
+        <div>
+          <hr class="mu-text-field-line">
+          <hr class="mu-text-field-focus-line">
+        </div>
       </div>
-    </div>
 
-    <div class="m-sign-btn">
-      Sign In
-    </div>
-    <div class="m-line-link">
-      <a href="http://">Forgot Password?</a>
-      <a href="http://">Sign Up?</a>
+      <div class="m-sign-btn">Sign In</div>
+      <div class="m-line-link">
+        <a href="http://">Forgot Password?</a>
+        <a href="http://">Sign Up?</a>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  Vue
-} from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
-  // components: {}
+  components: {},
 })
 export default class Login extends Vue {}
 </script>
@@ -138,7 +133,8 @@ export default class Login extends Vue {}
           -webkit-transform: scaleX(0);
           -ms-transform: scaleX(0);
           transform: scaleX(0);
-          -webkit-transition: -webkit-transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+          -webkit-transition: -webkit-transform 0.45s
+            cubic-bezier(0.23, 1, 0.32, 1);
           transition: -webkit-transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
           transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
           transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1),
@@ -163,7 +159,7 @@ export default class Login extends Vue {}
       margin-top: 25px;
       font-size: 14px;
 
-      >a {
+      > a {
         display: inline-block;
         color: #8e8e8e;
       }

@@ -1,8 +1,22 @@
 <template>
-<section class="Siderbar">
-  <div class="logo" />
-  <a-menu :defaultSelectedKeys="['1']" :defaultOpenKeys="['sub1']" mode="inline" theme="dark" :inlineCollapsed="collapsed">
-    <a-menu-item key="1">
+  <section class="Siderbar">
+    <div class="logo"/>
+    <a-menu
+      :defaultSelectedKeys="['1']"
+      :defaultOpenKeys="['sub1']"
+      mode="inline"
+      theme="dark"
+      :inlineCollapsed="collapsed"
+    >
+      <template v-for="(item, index) in routes">
+        <a-menu-item :key="index" v-show="item.meta.show">
+          <router-link :to="item.path" :key="index">
+            <a-icon type="pie-chart"/>
+            <span>{{item.name}}</span>
+          </router-link>
+        </a-menu-item>
+      </template>
+      <!-- <a-menu-item key="1">
       <a-icon type="pie-chart" />
       <span>Option 1</span>
     </a-menu-item>
@@ -35,27 +49,25 @@
         <a-menu-item key="11">Option 11</a-menu-item>
         <a-menu-item key="12">Option 12</a-menu-item>
       </a-sub-menu>
-    </a-sub-menu>
-  </a-menu>
-</section>
+      </a-sub-menu>-->
+    </a-menu>
+  </section>
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  Prop,
-  Vue,
-  Model,
-} from 'vue-property-decorator';
+import { Component, Prop, Vue, Model } from 'vue-property-decorator';
+import { routers } from '@/router/router';
 
 @Component({
   components: {},
 })
 export default class Siderbar extends Vue {
-  @Model('change', {
-    type: Boolean,
-  }) private collapsed!: boolean;
+  private routes: any = [];
+  private collapsed!: boolean;
 
+  private mounted() {
+    this.routes = routers;
+  }
   /**
    *
    * @desc   切换菜单栏效果

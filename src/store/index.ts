@@ -1,26 +1,31 @@
 import Vue from 'vue';
-import Vuex from 'vuex';
-import app from './modules/app';
-import getters from './getters';
-import tagsView from './modules/tagsView';
+import Vuex, { Store } from 'vuex';
 import createLogger from 'vuex/dist/logger';
+
 import actions from './actions';
+import mutations from './mutations';
+import state from './state';
+import getters from './getters';
+
+
+import app from './modules/app';
+import tagsView from './modules/tagsView';
 
 Vue.use(Vuex);
 
-const debug = process.env.NODE_ENV !== 'production'
+const debug = process.env.NODE_ENV !== 'production';
 
-export default new Vuex.Store({
-  state: {
-
-  },
-  mutations: {},
+const store: Store<any> = new Vuex.Store({
   actions,
-  modules: {
-    app,
-    tagsView
-  },
+  mutations,
   getters,
+  state,
+  modules: {
+    a: app,
+    b: tagsView,
+  },
   strict: debug,
-  plugins: debug ? [createLogger()] : []
+  plugins: debug ? [createLogger()] : [],
 });
+
+export default store;
