@@ -55,11 +55,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Model } from 'vue-property-decorator';
-import { routers } from '@/router/router';
+import { Component, Prop, Vue, Model } from "vue-property-decorator";
+import { routers } from "@/router/router";
 
 @Component({
-  components: {},
+  components: {}
 })
 export default class Siderbar extends Vue {
   private routes: any = [];

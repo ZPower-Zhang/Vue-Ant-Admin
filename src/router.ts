@@ -21,7 +21,6 @@ export default new Router({
     {
       path: '/home',
       name: 'home',
-      redirect: '/home/index',
       component: Layout,
       children: [
         {
@@ -31,7 +30,7 @@ export default new Router({
           meta: { title: 'index', icon: 'lock', noCache: false, admin: false },
         },
         {
-          path: '/dashboard',
+          path: 'dashboard',
           name: 'dashboard',
           component: () => import('@/views/home/dashboard.vue'),
           meta: { title: 'dashboard', icon: 'lock', noCache: false, admin: false },
